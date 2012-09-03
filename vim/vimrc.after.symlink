@@ -16,6 +16,7 @@ Bundle 'gmarik/vundle'
 
 " Vundle packages
 Bundle "git://github.com/tsaleh/vim-align.git"
+Bundle "git://github.com/mattn/gist-vim.git"
 
 filetype plugin indent on     " required!
 
