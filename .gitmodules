@@ -1,0 +1,3 @@
+[submodule "vim/janus.symlink"]
+	path = vim/janus.symlink
+	url = git@github.com:jamiely/dotfiles-janus.git
