@@ -1,7 +1,8 @@
 color desert
 color wombat " Use wombat if it's available
+color Tomorrow-Night
 
-set guifont=Inconsolata:h22
+set guifont=Inconsolata:h24
 
 " Start Vundle section
 set nocompatible               " be iMproved
