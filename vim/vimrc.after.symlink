@@ -1,29 +1,18 @@
 color desert
 color wombat " Use wombat if it's available
-color Tomorrow-Night
+color Tomorrow-Night-Bright
 
 set guifont=Inconsolata:h24
-
-" Start Vundle section
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" Vundle packages
-Bundle "git://github.com/tsaleh/vim-align.git"
-Bundle "git://github.com/mattn/gist-vim.git"
-
-filetype plugin indent on     " required!
 
 " Creates a right-hand margin
 :set colorcolumn=80
 
 " Command-p setup
-set wildignore+=*/app/dev/cache/*
+set wildignore+=*/cache/*,*/tmp/*,*.so,*.swp,*.zip
+
+" Setting file types
+" VB.Net
+autocmd BufNewFile,BufRead *.vb set ft=vbnet
+" ASP.Net with C# code behind
+autocmd BufNewFile,BufRead *.aspx set ft=aspnetcs
 
