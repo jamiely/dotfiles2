@@ -1,8 +1,8 @@
-color desert
+color desert " Default to desert as a last resort
 color wombat " Use wombat if it's available
 color Tomorrow-Night-Bright
 
-set guifont=Inconsolata:h24
+set guifont=Inconsolata\ for\ Powerline:h24
 
 " Creates a right-hand margin
 :set colorcolumn=80
@@ -15,4 +15,10 @@ set wildignore+=*/cache/*,*/tmp/*,*.so,*.swp,*.zip
 autocmd BufNewFile,BufRead *.vb set ft=vbnet
 " ASP.Net with C# code behind
 autocmd BufNewFile,BufRead *.aspx set ft=aspnetcs
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
+if ! has("gui_macvim")
+  set term=screen-256color
+endif
 

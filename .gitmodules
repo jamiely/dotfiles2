@@ -1,3 +1,6 @@
 [submodule "vim/janus.symlink"]
 	path = vim/janus.symlink
 	url = git@github.com:jamiely/dotfiles-janus.git
+[submodule "zsh/oh-my-zsh-powerline-theme"]
+	path = zsh/oh-my-zsh-powerline-theme
+	url = git://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git
