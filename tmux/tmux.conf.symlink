@@ -27,8 +27,8 @@ set-option -g status-utf8 on
 set-option -g status-justify "centre"
 set-option -g status-left-length 60
 set-option -g status-right-length 90
-set-option -g status-left "#(/Users/jamiely/codew/tmux-powerline/status-left.sh)"
-set-option -g status-right "#(/Users/jamiely/codew/tmux-powerline/status-right.sh)"
-bind C-[ run '~/codew/tmux-powerline/mute_statusbar.sh left'      # Mute left statusbar.
-bind C-] run '~/codew/tmux-powerline/mute_statusbar.sh right'     # Mute right statusbar.
+set-option -g status-left "#(~/code/tmux-powerline/status-left.sh)"
+set-option -g status-right "#(~/code/tmux-powerline/status-right.sh)"
+bind C-[ run '~/code/tmux-powerline/mute_statusbar.sh left'      # Mute left statusbar.
+bind C-] run '~/code/tmux-powerline/mute_statusbar.sh right'     # Mute right statusbar.
 
