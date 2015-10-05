@@ -8,7 +8,13 @@ set guifont=Inconsolata\ for\ Powerline:h24
 :set colorcolumn=80
 
 " Command-p setup
-set wildignore+=*/cache/*,*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/cache/*,*/tmp/*,*.so,*.swp,*.zip,*/target/*
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|target)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " Setting file types
 " VB.Net
