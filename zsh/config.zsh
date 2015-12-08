@@ -48,3 +48,14 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+
+bindkey '^[[1;5D' beginning-of-line
+bindkey '^[[1;5C' end-of-line
+bindkey '^[[1;5H' beginning-of-line
+bindkey '^[[1;5F' end-of-line
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+bindkey "^R" history-incremental-search-backward
+

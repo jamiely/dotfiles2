@@ -28,3 +28,5 @@ if ! has("gui_macvim")
   set term=screen-256color
 endif
 
+set cursorline
+
