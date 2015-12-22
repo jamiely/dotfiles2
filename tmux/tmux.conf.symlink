@@ -1,34 +1,53 @@
-# Set status bar
-set -g status-bg black
-set -g status-fg white
-set -g status-left ‘#[fg=green]#H’
+set-option -g default-shell /bin/zsh
+
+# Act like Vim
+set-window-option -g mode-keys emacs
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+# Look good
+set-option -g default-terminal "screen-256color"
+
+# Enable mouse support (works in iTerm)
+# set-window-option -g mouse on
+# set-option -g mouse-select-pane on
+# set-option -g mouse-resize-pane on
+# set-option -g mouse-select-window on
+set -g mouse-utf8 on
+set -g mouse on
+bind -n WheelUpPane   select-pane -t= \; copy-mode -e \; send-keys -M
+bind -n WheelDownPane select-pane -t= \;                 send-keys -M
+
+# set up layouts
+# set main-pane-width 130
+
+# Change cursor in vim to distinguish between insert and command mode
+#set-option -g terminal-overrides '*88col*:colors=88,*256col*:colors=256,xterm*:XT:Ms=\E]52;%p1%s;%p2%s\007:Cc=\E]12;%p1%s\007:Cr=\E]112\007:Cs=\E]50;CursorShape=%?%p1%{3}%<%t%{0}%e%p1%{2}%-%;%d\007'
+
+# scrollback buffer size increase
+set -g history-limit 500000
+
+# C-b C-b will swap to last used window
+bind-key C-b last-window
+
+# Start tab numbering at 1
+set -g base-index 1
+
+# Allows for faster key repetition
+set -s escape-time 0
 
 # Highlight active window
 set-window-option -g window-status-current-bg red
 
-# Set window notifications
-setw -g monitor-activity on
-set -g visual-activity on
+# use different keys to split vertical and horizonal
+#bind | split-window -h
+#bind - split-window -v
 
-# fix copy and paste issues
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+# Change cursor in vim to distinguish between insert and command mode
+# Use in conjunciton with tmux-cursors.vim
+#set-option -g terminal-overrides '*88col*:colors=88,*256col*:colors=256,xterm*:XT:Ms=\E]52;%p1%s;%p2%s\007:Cc=\E]12;%p1%s\007:Cr=\E]112\007:Cs=\E]50;CursorShape=%?%p1%{3}%<%t%{0}%e%p1%{2}%-%;%d\007'
 
-setw -g automatic-rename off
-
-# tell tmux it has 256 colors
-set -g default-terminal "screen-256color"
-
-set-option -g xterm-keys on
-
-# tmux powerline
-set-option -g status on
-set-option -g status-interval 2
-set-option -g status-utf8 on
-set-option -g status-justify "centre"
-set-option -g status-left-length 60
-set-option -g status-right-length 90
-set-option -g status-left "#(~/code/tmux-powerline/status-left.sh)"
-set-option -g status-right "#(~/code/tmux-powerline/status-right.sh)"
-bind C-[ run '~/code/tmux-powerline/mute_statusbar.sh left'      # Mute left statusbar.
-bind C-] run '~/code/tmux-powerline/mute_statusbar.sh right'     # Mute right statusbar.
-
+# use C-b v to paste the tmux buffer
+bind v paste-buffer
