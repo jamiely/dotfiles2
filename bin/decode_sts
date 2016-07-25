@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+CODE=$1
+
+if [ -z "$CODE" ]; then
+  # if code is not specified get it from stdin
+  CODE=$(cat)
+  aws sts decode-authorization-message --encoded-message "$CODE" \
+    | jq '.DecodedMessage | fromjson '
+else
+  aws sts decode-authorization-message --encoded-message "$CODE" \
+    | jq '.DecodedMessage | fromjson '
+fi
+
+# vim: set filetype=bash
+
