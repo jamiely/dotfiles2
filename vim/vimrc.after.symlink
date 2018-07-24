@@ -22,6 +22,8 @@ autocmd BufNewFile,BufRead *.vb set ft=vbnet
 " ASP.Net with C# code behind
 autocmd BufNewFile,BufRead *.aspx set ft=aspnetcs
 
+autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
 " Powerline
 let g:Powerline_symbols = 'fancy'
 if ! has("gui_macvim")
