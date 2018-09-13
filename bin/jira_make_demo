@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+run() {
+  local file=$1
+  local keep_audio=${KEEP_AUDIO:-"n"}
+  local audio_flag="-acodec mp2"
+  if [ ! -f "$file" ]; then
+    >&2 echo "File $file does not exist"
+    return 1
+  fi
+  if [ "$keep_audio" = "n" ]; then
+    audio_flag="-an"
+  fi
+  nice \
+    ffmpeg -i $file \
+    -vcodec h264 \
+    $audio_flag \
+    -vf "scale=320:240" \
+    -filter:v "setpts=0.5*PTS" \
+    ${file%%.mov}_low.mp4
+}
+
+run $@
+
